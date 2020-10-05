@@ -19,3 +19,12 @@ The user will input what they want and select the language. This is the basics o
   - The user will be prompted to select a language, they will select the language desired if the language doesn't exist or isnt compatiable they will be prompted with *invalid language* and will be asked to select a language.
   - After the desired input is translated they will be asked if anything else is translated depending on the input it will restart with asking if they want to read from a file and select a language. If yes then it loops, if no the program will exit
   
+## Daily Goals
+### Tuesday: Go over documentation for *googletrans 3.0.0* and get a base started for user input.
+Tuesday we will be going over the documentation for the module googletrans. We will start a base for user input asking if they would want to read from a file or not. Then ask the user for the language they want it translated to and if they want it translated to multiple languages.
+
+### Wednesday: Multiple outputs for user input
+We will implement the multiple output function so the user inputs the x amount of languages wanted and then it will be outputted in the selected languages.
+
+### Thursday: Fix bugs / errors - Input validation
+Thursday we will fix any bugs and errors and go over the input validation to make sure it loops propererly and can print if the input is invalid
