@@ -220,3 +220,4 @@ language_names = [
     ["yoruba"],
     ["zulu"],
 ]
+print(language_names)
