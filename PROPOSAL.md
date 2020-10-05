@@ -4,7 +4,7 @@
 
 ### Description and Motivation
 The purpose of this program is to translate any language into another language of your choice.
-This is possible with the help of importing *googletrans* into the program. You can redirect a file if you want to read it in a different language, there are 71 languages you can choose from. As well as translating one input into multiple output / languages.
+This is possible with the help of importing *googletrans* into the program. You can redirect a file if you want to read it in a different language, there are 106 languages you can choose from. As well as translating one input into multiple output / languages.
 
 ### Prior Art
 Many translasting applications exist, you input what you want and select the langauge output. We aren't remaking how translating works but we will have things different than others. We will be making a translating project with *googletrans 3.0.0*. We chose *googletrans 3.0.0* beacuse its updated and is known.
