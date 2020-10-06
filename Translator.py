@@ -241,3 +241,10 @@ abbreviations\tLanguages"""
 
 if print_languages == "n":
     pass
+
+FILE = input('would you like to trnsalate from a file [Y/N] ').lower()
+if FILE == 'y':
+    options = input('would you like to translate in multiple languages? [Y/N] ').lower()
+    if options == 'n':
+        Lang = input('What language yould you like to translate the file to: ')
+        FILE_NAME = input('What  is the file name: ')
