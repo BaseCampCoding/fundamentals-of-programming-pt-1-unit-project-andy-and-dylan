@@ -1,7 +1,6 @@
 import googletrans
 from googletrans import Translator
 
-##comment
 
 a = [
     "af",
