@@ -3,7 +3,6 @@ from googletrans import Translator
 import time
 
 ##comment
-##comment
 
 a = [
     ["af"],
