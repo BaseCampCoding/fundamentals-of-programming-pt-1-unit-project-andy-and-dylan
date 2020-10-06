@@ -3,7 +3,6 @@ from googletrans import Translator
 import time
 
 ##comment
-##comment
 
 a = [
     ["af"],
@@ -227,7 +226,7 @@ b = [
 
 
 print_languages = input(
-    "There are currently 106 languages supported, would you like to see them? [Y/N] "
+    "Welcome to the translator there are currently 106 languages supported, would you like to see them? [Y/N] "
 ).lower()
 
 if print_languages == "y":
@@ -242,9 +241,14 @@ abbreviations\tLanguages"""
 if print_languages == "n":
     pass
 
-FILE = input('would you like to trnsalate from a file [Y/N] ').lower()
-if FILE == 'y':
-    options = input('would you like to translate in multiple languages? [Y/N] ').lower()
-    if options == 'n':
-        Lang = input('What language yould you like to translate the file to: ')
-        FILE_NAME = input('What  is the file name: ')
+FILE = input("Would you like to translate from a file [Y/N] ").lower()
+if FILE == "y":
+    options = input("would you like to translate in multiple languages? [Y/N] ").lower()
+    if options == "n":
+        Lang = input("What language would you like to translate the file to: ")
+        FILE_NAME = input("What is the file name: ")
+        f = open(FILE_NAME, "r")
+        read_file = f.read()
+        translator = Translator()
+        translated = translator.translate(read_file, dest=Lang)
+        print(translated)
