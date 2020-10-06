@@ -268,4 +268,11 @@ if FILE == "y":
         read_file = f.read()
         translator = Translator()
         translated = translator.translate(read_file, dest=Lang)
+<<<<<<< Updated upstream
         print(translated.text)
+=======
+        print(translated)
+elif FILE == 'n':
+    Lang = input("What language would you like to translate to: ")
+    phrase = input('Enter what you want to translate: ')
+>>>>>>> Stashed changes
