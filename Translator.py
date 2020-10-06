@@ -275,4 +275,5 @@ if FILE == "y":
 elif FILE == 'n':
     Lang = input("What language would you like to translate to: ")
     phrase = input('Enter what you want to translate: ')
+    
 >>>>>>> Stashed changes
