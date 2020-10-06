@@ -270,7 +270,6 @@ if FILE == "y":
         print(translated)
 
 elif FILE == "n":
-<<<<<<< Updated upstream
     options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
     if options == "y":
         phrase = input("What would you like to translate? ")
@@ -292,14 +291,8 @@ elif FILE == "n":
         translator = Translator()
         translated = translator.translate(phrase, dest=Lang)
         print(translated.text)
-<<<<<<< HEAD
-=======
-
->>>>>>> acf821e550ecba195067d84feb5500cf884535cf
-=======
     Lang = input("What language would you like to translate to: ")
     phrase = input("Enter what you want to translate: ")
     translator = Translator()
     translated = translator.translate(phrase, dest=Lang)
     print(translated.text)
->>>>>>> Stashed changes
