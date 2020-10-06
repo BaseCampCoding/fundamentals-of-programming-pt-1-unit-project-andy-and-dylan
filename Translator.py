@@ -1,8 +1,6 @@
 import googletrans
 from googletrans import Translator
-import time
 
-##comment
 
 a = [
     ["af"],
@@ -233,7 +231,7 @@ print_languages = input(
 if print_languages == "y":
     print(
         """
-abbreviations\tLanguages"""
+Abbreviations\tLanguages"""
     )
 
     for x, y in zip(a, b):
@@ -242,12 +240,12 @@ abbreviations\tLanguages"""
 if print_languages == "n":
     pass
 
-FILE = input("Would you like to translate from a file [Y/N] ").lower()
+FILE = input("Would you like to translate from a file? [Y/N] ").lower()
 if FILE == "y":
     options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
     if options == "y":
         multiple_langs = int(input("How many languages do you want? "))
-        FILE_NAME = input("What is the file name: ")
+        FILE_NAME = input("What is the file name? ")
         while multiple_langs > 0:
             Langs = input("Please input one of the languages: ")
             translation_langs.append(Langs)
@@ -262,8 +260,8 @@ if FILE == "y":
             i += 1
 
     if options == "n":
-        Lang = input("What language would you like to translate the file to: ")
-        FILE_NAME = input("What is the file name: ")
+        Lang = input("What language would you like to translate the file to? ")
+        FILE_NAME = input("What is the file name? ")
         f = open(FILE_NAME, "r")
         read_file = f.read()
         translator = Translator()
@@ -271,12 +269,12 @@ if FILE == "y":
         print(translated.text)
         print(translated)
 
-elif FILE == 'n':
-    options = input('Would you like to translate in multiple languages [Y/N] ').lower()
-    if options == 'y':
-        phrase = input('What would you like to translate: ')
+elif FILE == "n":
+    options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
+    if options == "y":
+        phrase = input("What would you like to translate? ")
         multiple_langs = int(input("How many languages do you want? "))
-       
+
         while multiple_langs > 0:
             Langs = input("Please input one of the languages: ")
             translation_langs.append(Langs)
@@ -287,12 +285,9 @@ elif FILE == 'n':
             translated = translator.translate(phrase, dest=translation_langs[i])
             print(translated.text)
             i += 1
-    elif options == 'n':
-        phrase = input('What would you like to translate: ')
-        Lang = input("What language would you like to translate to: ")
+    elif options == "n":
+        phrase = input("What would you like to translate? ")
+        Lang = input("What language would you like to translate to? ")
         translator = Translator()
         translated = translator.translate(phrase, dest=Lang)
         print(translated.text)
-
-
-
