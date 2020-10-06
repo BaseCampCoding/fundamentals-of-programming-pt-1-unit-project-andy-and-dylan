@@ -243,10 +243,11 @@ if print_languages == "n":
 
 FILE = input("Would you like to translate from a file [Y/N] ").lower()
 if FILE == "y":
-    options = input("would you like to translate in multiple languages? [Y/N] ").lower()
+    options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
     if options == "n":
         Lang = input("What language would you like to translate the file to: ")
         FILE_NAME = input("What is the file name: ")
+        
         f = open(FILE_NAME, "r")
         read_file = f.read()
         translator = Translator()
