@@ -1,7 +1,11 @@
 import googletrans
 from googletrans import Translator
+import time
 
-language_lists = [
+##comment
+##comment
+
+a = [
     ["af"],
     ["sq"],
     ["am"],
@@ -111,7 +115,7 @@ language_lists = [
     ["zu"],
 ]
 
-language_names = [
+b = [
     ["afrikaans"],
     ["albanian"],
     ["amharic"],
@@ -220,4 +224,20 @@ language_names = [
     ["yoruba"],
     ["zulu"],
 ]
-print(language_names)
+
+
+print_languages = input(
+    "There are currently 106 languages supported, would you like to see them? [Y/N] "
+).lower()
+
+if print_languages == "y":
+    print(
+        """
+    abbreviations\tLanguages"""
+    )
+
+    for x, y in zip(a, b):
+        print(x, y, sep="\t\t")
+
+if print_languages == "n":
+    pass
