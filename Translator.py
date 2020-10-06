@@ -233,7 +233,7 @@ print_languages = input(
 if print_languages == "y":
     print(
         """
-    abbreviations\tLanguages"""
+abbreviations\tLanguages"""
     )
 
     for x, y in zip(a, b):
