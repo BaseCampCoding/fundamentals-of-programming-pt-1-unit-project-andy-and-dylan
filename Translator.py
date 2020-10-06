@@ -267,7 +267,6 @@ if FILE == "y":
         translator = Translator()
         translated = translator.translate(read_file, dest=Lang)
         print(translated.text)
-        print(translated)
 
 elif FILE == "n":
     options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
@@ -291,8 +290,3 @@ elif FILE == "n":
         translator = Translator()
         translated = translator.translate(phrase, dest=Lang)
         print(translated.text)
-    Lang = input("What language would you like to translate to: ")
-    phrase = input("Enter what you want to translate: ")
-    translator = Translator()
-    translated = translator.translate(phrase, dest=Lang)
-    print(translated.text)
