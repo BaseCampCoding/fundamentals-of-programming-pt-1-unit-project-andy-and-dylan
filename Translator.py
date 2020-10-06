@@ -224,6 +224,7 @@ b = [
     ["zulu"],
 ]
 
+translation_langs = []
 
 print_languages = input(
     "Welcome to the translator there are currently 106 languages supported, would you like to see them? [Y/N] "
@@ -244,12 +245,27 @@ if print_languages == "n":
 FILE = input("Would you like to translate from a file [Y/N] ").lower()
 if FILE == "y":
     options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
+    if options == "y":
+        multiple_langs = int(input("How many languages do you want? "))
+        FILE_NAME = input("What is the file name: ")
+        while multiple_langs > 0:
+            Langs = input("Please input one of the languages: ")
+            translation_langs.append(Langs)
+            multiple_langs -= 1
+        i = 0
+        while i < len(translation_langs):
+            f = open(FILE_NAME, "r")
+            read_file = f.read()
+            translator = Translator()
+            translated = translator.translate(read_file, dest=translation_langs[i])
+            print(translated.text)
+            i += 1
+
     if options == "n":
         Lang = input("What language would you like to translate the file to: ")
         FILE_NAME = input("What is the file name: ")
-        
         f = open(FILE_NAME, "r")
         read_file = f.read()
         translator = Translator()
         translated = translator.translate(read_file, dest=Lang)
-        print(translated)
+        print(translated.text)
