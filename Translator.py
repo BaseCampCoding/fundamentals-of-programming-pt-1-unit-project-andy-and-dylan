@@ -270,9 +270,19 @@ if FILE == "y":
 
 elif FILE == "n":
     options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
+    while options != 'y' and options != 'n':
+        print('invalid input')
+        options = input("Would you like to translate in multiple languages? [Y/N] ").lower()
+        continue
+
     if options == "y":
         phrase = input("What would you like to translate? ")
         multiple_langs = int(input("How many languages do you want? "))
+        while multiple_langs < 0:
+            print('Please select a value greater than 0')
+            multiple_langs = int(input("How many languages do you want? "))
+            continue
+
 
         while multiple_langs > 0:
             Langs = input("Please input one of the languages: ")
