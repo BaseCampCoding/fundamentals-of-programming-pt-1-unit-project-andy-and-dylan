@@ -1,4 +1,4 @@
-`import googletrans
+import googletrans
 from googletrans import Translator
 import os.path
 
