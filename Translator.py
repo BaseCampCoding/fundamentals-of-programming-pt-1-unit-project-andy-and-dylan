@@ -239,7 +239,7 @@ Abbreviations & Languages"""
     )
 
     for x, y in zip(a, b):
-        print(x, y, sep=" = ")
+        print(x, y, sep=" - ")
 
 if print_languages == "n":
     pass
