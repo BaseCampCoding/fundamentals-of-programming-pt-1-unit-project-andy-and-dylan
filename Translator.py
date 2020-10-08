@@ -314,29 +314,31 @@ elif FILE == "n":
             "Would you like to translate in multiple languages? [Y/N] "
         ).lower()
         continue
-
     if options == "y":
         phrase = input("What would you like to translate? ")
-        multiple_langs = int(input("How many languages do you want? "))
-        while multiple_langs < 0:
-            print("Please select a value greater than 0")
-            multiple_langs = int(input("How many languages do you want? "))
-            continue
-
-        while multiple_langs > 0:
-            Langs = input("Please input one of the languages: ")
-            while Langs not in googletrans.LANGUAGES and Langs not in b:
-                print("Invalid language. Please look at the supported languages.")
+        multi_lang = None
+        while multi_lang is None or multi_lang < 0:
+            multiple_langs = input("How many languages do you want? ")
+            try:
+                multi_lang = int(multiple_langs)
+            except ValueError:
+                print("Invalid input. Please try again.")
+                continue
+            if multi_lang < 0:
+                print("Invalid input. Please try again.")
+            while multi_lang > 0:
                 Langs = input("Please input one of the languages: ")
-            translation_langs.append(Langs)
-            multiple_langs -= 1
-
-        i = 0
-        while i < len(translation_langs):
-            translator = Translator()
-            translated = translator.translate(phrase, dest=translation_langs[i])
-            print(translated.text)
-            i += 1
+                while Langs not in googletrans.LANGUAGES and Langs not in b:
+                    print("Invalid language. Please look at the supported languages.")
+                    Langs = input("Please input one of the languages: ")
+                translation_langs.append(Langs)
+                multi_lang -= 1
+            i = 0
+            while i < len(translation_langs):
+                translator = Translator()
+                translated = translator.translate(phrase, dest=translation_langs[i])
+                print(translated.text)
+                i += 1
 
     elif options == "n":
         phrase = input("What would you like to translate? ")
