@@ -225,25 +225,24 @@ def main():
 
     translation_langs = []
 
-    print_languages = input(
-        "There are currently 106 languages supported, would you like to see them? [Y/N] "
-    ).lower()
+    def print_lang():
+        print_languages = input(
+            "There are currently 106 languages supported, would you like to see them? [Y/N] "
+        ).lower()
+        if print_languages == "y":
+            print(
+                """
+                Abbreviations & Languages"""
+            )
+            for x, y in zip(a, b):
+                print(x, y, sep=" - ")
+        elif print_languages == "n":
+            pass
+        else:
+            print("Invalid input. Try again.")
+            print_lang()
 
-    while print_languages != "y" and print_languages != "n":
-        print("Invalid input. Please try again.")
-        print_languages = input("Would you like to see all supported languages? ")
-
-    if print_languages == "y":
-        print(
-            """
-    Abbreviations & Languages"""
-        )
-
-        for x, y in zip(a, b):
-            print(x, y, sep=" - ")
-
-    if print_languages == "n":
-        pass
+    print_lang()
 
     FILE = input("\nWould you like to translate from a file? [Y/N] ").lower()
     while FILE != "y" and FILE != "n":
