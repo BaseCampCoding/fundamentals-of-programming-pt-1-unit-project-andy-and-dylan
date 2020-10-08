@@ -244,69 +244,73 @@ def main():
 
     print_lang()
 
-    FILE = input("\nWould you like to translate from a file? [Y/N] ").lower()
-    while FILE != "y" and FILE != "n":
-        print("Invalid input. Please try again")
-        FILE = input("Would you like to translate from a file? [Y/N] ").lower()
-        continue
-
-    if FILE == "y":
-        options = input(
-            "Would you like to translate in multiple languages? [Y/N] "
-        ).lower()
-        while options != "y" and options != "n":
-            print("Invalid input. Try again.")
+    def File():
+        FILE = input("\nWould you like to translate from a file? [Y/N] ").lower()
+        if FILE == "y":
             options = input(
-                "Would you like to translate in multiple languages? [Y/N] "
-            ).lower()
-            continue
+                    "Would you like to translate in multiple languages? [Y/N] "
+                ).lower()
+                while options != "y" and options != "n":
+                    print("Invalid input. Try again.")
+                    options = input(
+                        "Would you like to translate in multiple languages? [Y/N] "
+                    ).lower()
+                    continue
 
-        if options == "y":
-            multiple_langs = int(input("How many languages do you want? "))
+                if options == "y":
+                    multiple_langs = int(input("How many languages do you want? "))
 
-            while multiple_langs > 0:
-                Langs = input("Please input one of the languages: ")
-                while Langs not in googletrans.LANGUAGES and Langs not in b:
+                    while multiple_langs > 0:
+                        Langs = input("Please input one of the languages: ")
+                        while Langs not in googletrans.LANGUAGES and Langs not in b:
+                            print("Invalid language. Please look at the supported languages.")
+                            Langs = input("Please input one of the languages: ")
+                        translation_langs.append(Langs)
+                        multiple_langs -= 1
+
+                    path = input("Input the directory to the file: ")
+                    isExist = os.path.exists(path)
+                    while isExist == False:
+                        print("Invalid file or directory try again.")
+                        path = input("Input the directory to the file: ")
+                        isExist = os.path.exists(path)
+
+                    i = 0
+                    while i < len(translation_langs):
+                        f = open(path, "r")
+                        read_file = f.read()
+                        translator = Translator()
+                        translated = translator.translate(read_file, dest=translation_langs[i])
+                        print(translated.text)
+                        i += 1
+                    mainloop()
+
+        elif FILE = "n":
+            if options == "n":
+                Lang = input("What language would you like to translate the file to? ")
+                while Lang not in googletrans.LANGUAGES and Lang not in b:
                     print("Invalid language. Please look at the supported languages.")
-                    Langs = input("Please input one of the languages: ")
-                translation_langs.append(Langs)
-                multiple_langs -= 1
+                    Lang = input("Please input the language: ")
 
-            path = input("Input the directory to the file: ")
-            isExist = os.path.exists(path)
-            while isExist == False:
-                print("Invalid file or directory try again.")
                 path = input("Input the directory to the file: ")
                 isExist = os.path.exists(path)
+                while isExist == False:
+                    print("Invalid file or directory try again.")
+                    path = input("Input the directory to the file: ")
+                    isExist = os.path.exists(path)
 
-            i = 0
-            while i < len(translation_langs):
                 f = open(path, "r")
                 read_file = f.read()
                 translator = Translator()
-                translated = translator.translate(read_file, dest=translation_langs[i])
+                translated = translator.translate(read_file, dest=Lang)
                 print(translated.text)
-                i += 1
             mainloop()
-        if options == "n":
-            Lang = input("What language would you like to translate the file to? ")
-            while Lang not in googletrans.LANGUAGES and Lang not in b:
-                print("Invalid language. Please look at the supported languages.")
-                Lang = input("Please input the language: ")
+        else:
+            print("Invalid input. Try again")   
+            File()     
 
-            path = input("Input the directory to the file: ")
-            isExist = os.path.exists(path)
-            while isExist == False:
-                print("Invalid file or directory try again.")
-                path = input("Input the directory to the file: ")
-                isExist = os.path.exists(path)
-
-            f = open(path, "r")
-            read_file = f.read()
-            translator = Translator()
-            translated = translator.translate(read_file, dest=Lang)
-            print(translated.text)
-        mainloop()
+    File()  
+        
 
     elif FILE == "n":
         options = input(
