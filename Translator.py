@@ -254,12 +254,12 @@ def main():
                 multiple_langs = int(input("How many languages do you want? "))
 
                 while multiple_langs > 0:
-                    Langs = input("Please input one of the languages: ")
+                    Langs = input("Please input one of the languages: ").lower()
                     while Langs not in googletrans.LANGUAGES and Langs not in b:
                         print(
                             "Invalid language. Please look at the supported languages."
                         )
-                        Langs = input("Please input one of the languages: ")
+                        Langs = input("Please input one of the languages: ").lower()
                     translation_langs.append(Langs)
                     multiple_langs -= 1
 
@@ -283,10 +283,12 @@ def main():
                 mainloop()
 
             elif options == "n":
-                Lang = input("What language would you like to translate the file to? ")
+                Lang = input(
+                    "What language would you like to translate the file to? "
+                ).lower()
                 while Lang not in googletrans.LANGUAGES and Lang not in b:
                     print("Invalid language. Please look at the supported languages.")
-                    Lang = input("Please input the language: ")
+                    Lang = input("Please input the language: ").lower()
 
                 path = input("Input the directory to the file: ")
                 isExist = os.path.exists(path)
@@ -323,12 +325,12 @@ def main():
                     if multi_lang < 0:
                         print("Invalid input. Please try again.")
                     while multi_lang > 0:
-                        Langs = input("Please input one of the languages: ")
+                        Langs = input("Please input one of the languages: ").lower()
                         while Langs not in googletrans.LANGUAGES and Langs not in b:
                             print(
                                 "Invalid language. Please look at the supported languages."
                             )
-                            Langs = input("Please input one of the languages: ")
+                            Langs = input("Please input one of the languages: ").lower()
                         translation_langs.append(Langs)
                         multi_lang -= 1
                     i = 0
@@ -352,7 +354,10 @@ def main():
                 translator = Translator()
                 translated = translator.translate(phrase, dest=Lang)
                 print(translated.text)
-            mainloop()
+                mainloop()
+            else:
+                print("Invalid input. Please try again")
+                File()
         else:
             print("Invalid input. Please try again.")
             File()
