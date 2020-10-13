@@ -100,7 +100,7 @@ def main():
         "ta",
         "te",
         "th",
-        "ty",
+        "tr",
         "uk",
         "ur",
         "ug",
