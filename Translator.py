@@ -336,9 +336,7 @@ def main():
                     i = 0
                     while i < len(translation_langs):
                         translator = Translator()
-                        translated = translator.translate(
-                            phrase, dest=translation_langs[i]
-                        )
+                        translated = translator.translate(phrase, dest=translation_langs[i])
                         print(translated.text)
                         i += 1
                 mainloop()
