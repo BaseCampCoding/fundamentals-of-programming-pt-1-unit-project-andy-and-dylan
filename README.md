@@ -16,3 +16,6 @@ After you have Python3 and googletranslate installed you can run the `translator
 >>> What language: ja
 こんにちは、元気ですか?
 ```
+
+### Google Trans Module
+Currently the GoogleTrans module is broken and you will recieve an error when trying to run our program
