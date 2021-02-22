@@ -4,7 +4,8 @@ This is a translator written in Python3 it sopports up to 106 languages
 ## Getting Started 
 
 ### Prerequisites
-Python3 needs to be installed as well the googletranslate package.
+Python3
+Googletrans module `pip install googletrans`
 
 ### Running
 After you have Python3 and googletranslate installed you can run the `translator.py`. You can read a file and translate them into multiple langauages or single langauages, you can see all supported languages and or translate any text into any language
@@ -18,4 +19,4 @@ After you have Python3 and googletranslate installed you can run the `translator
 ```
 
 ### Google Trans Module
-Currently the GoogleTrans module is broken and you will recieve an error when trying to run our program
+Currently the GoogleTrans module is broken and you will recieve an error when trying to translate information. The unoffical fix is to `pip install googletrans==4.0.0-rc1`
